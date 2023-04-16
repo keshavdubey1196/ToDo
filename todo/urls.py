@@ -6,6 +6,7 @@ from .views import (
     TaskUpdate,
     TaskDelete,
     CustomLoginView,
+    RegisterView
 )
 from django.contrib.auth.views import LogoutView
 
@@ -18,4 +19,5 @@ urlpatterns = [
     path("create-task", TaskCreate.as_view(), name="task-create"),
     path("task-update/<int:pk>/", TaskUpdate.as_view(), name="task-update"),
     path("task-delete/<int:pk>/", TaskDelete.as_view(), name="task-delete"),
+    path("register/", RegisterView.as_view(), name="register"),
 ]
